@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=60, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:darkorchid ;
+    }
+</style>
+<body>
+    <center><h1 style="color:rgb(43, 165, 226)">Course Registration</h1></center>
+    <div style="margin-left:42%;; margin-top:5%">
+    <form method="POST">
+        <label>Course Id</label>
+        <p><input placeholder="Enter course id" type="number" name="courseid" required/></p>
+        <label>Course Name</label>
+        <p><input placeholder="Enter Course name" type="text" name="coursename" required/></p>
+        <label>Course Duration</label>
+        <p><input placeholder="Enter duration time" type="text" name="duration" required/></p>
+        <button>submit</button>
+        <a href="{{url_for('addcourse')}}" ></a>
+</body>
+</html>

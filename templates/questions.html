@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:grey;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 style="color:rgb(43, 165, 226)">Add Questions</h1></center>
+    <div style="margin-left:42%;; margin-top:5%">
+    <form method="POST">
+        <label>Question Id</label>
+        <p><input placeholder="Enter question id" type="number" name="questionid" required/></p>
+        <label>Question Name</label>
+        <p><input placeholder="Enter question name" type="text" name="questionname" required/></p>
+        <label>Course id</label>
+         <p><input placeholder="Enter course id" type="number" name="courseid" required/></p>
+        <label>Option1</label>
+        <p><input placeholder="Enter option" type="text" name="option" required/></p>
+        <label>Option2</label>
+        <p><input placeholder="Enter option" type="text" name="option" required/></p>
+        <label>Option3</label>
+        <p><input placeholder="Enter option" type="text" name="option" required/></p>
+        <label>Option4</label>
+        <p><input placeholder="Enter option" type="text" name="option" required/></p>
+        <label> Correct Option</label>
+        <p><input placeholder="Enter correct option" type="text" name="correctoption" required/></p>
+        <label>Marks</label>
+        <p><input placeholder="Enter marks" type="number" name="marks" required/></p>
+                
+         <a href="{{url_for('courses.html')}}" target="_blank"></a>
+        <button>submit</button>
+    </form>
+        
+</body>
+</html>
+    
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430879.jpg?w=1380&t=st=1682570140~exp=1682570740~hmac=ccd410499f988d255edee12d4c00e739dfc941a4aba4ece45df8613f6d3288bd');
+            background-size: cover;
+            margin-top: 10%;
+        }
+        b{
+            color:rgb(50, 5, 38);
+        }
+        label {
+            color: palevioletred;
+        }
+        .btnstyle {
+            background-color: palevioletred;
+            color:black;
+            padding:12px;
+            border-radius: 10px;
+            border:none;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+    {% endif %}
+{% endwith %}
+<body>
+    <center>
+    <h1 style="color:red">Admin Registration Page</h1></center>
+    <div style="margin-left:42%;; margin-top:7%">
+    <form method="POST">
+        <label>User Name</label>
+        <p><input placeholder="Enter your User Name" type="text" name="username" required/></p>
+        <label>Password</label>
+        <p><input placeholder="Enter your password" type="number" name="password" required/></p>
+        <label>Email</label>
+        <p><input placeholder="Enter your Email" type="email" name="email" required/></p>
+        <button class="btnstyle">Register</button>
+        <a href="{{url_for('adminlogin')}}" target="_blank">Already Have an Account?</a>
+    </form>
+</div>
+
+</body>
+</html>

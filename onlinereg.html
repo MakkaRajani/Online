@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: url('https://i.pinimg.com/originals/72/14/25/7214252a78d0b6f2467d4c0c835d49ab.jpg');
+            background-size: cover;
+        }
+        b{
+            color:antiquewhite;
+        }
+        label {
+            color: green;
+        }
+        .btnstyle {
+            background-color: palevioletred;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1 style="color:blueviolet">Student Registration Page</h1></center>
+    <div style="margin-left:42%;; margin-top:5%">
+    <form method="POST">
+        <label>Roll No</label>
+        <p><input placeholder="Enter your Roll No" type="number" name="Roll No" required/></p>
+        <label>Password</label>
+        <p><input placeholder="Enter your password" type="text" name="Password" required/></p>
+        <label>Gender</label>
+        <p><input placeholder="Enter Gender" type="text" name="Gender" required/></p>
+        <label>Email</label>
+        <p><input placeholder="Enter your Email" type="email" name="email" required/></p>
+        <button class="btnstyle">Register</button>
+        <a href="{{url_for('login')}}" target="_blank">Already Have an Account?</a>
+    </form>
+</div>
+
+</body>
+</html>

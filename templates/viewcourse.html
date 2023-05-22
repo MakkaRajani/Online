@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+     {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+<body>
+    <a href="{{url_for('dashboard')}}"><button style="float:right" class="btnstyle">Back</button></a>
+    <center><h1 style="color:black;">Courses</h1></center>
+    <div style="margin-left: 3px;margin-top: 2%;">
+     <div>
+        <a href="{{url_for('viewcourse')}}"><button class="btnstyle">Add Courses</button></a>
+     </div>
+     <table cellpadding="10" border="5">
+        <br>
+        <tr>
+              <td><h2>Course id</h2></td>
+              <td><h2>Course name</h2></td>
+              <td><h2>Duration</h2></td>
+        </tr>
+
+        {% for i in data %}
+          <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td><a href="{{url_for('delete',courseid=i[0])}}">delete</a></td>
+
+          </tr>
+        {% endfor %}
+     </table>
+</body>
+</html>

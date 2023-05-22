@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='style2.css')}}">
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          <img src="./pic/logo.jpg">
+          <span class="nav-item">Admin</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-menorah"></i>
+          <span class="nav-item">Add Question</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-comment"></i>
+          <span class="nav-item">All Questions</span>
+        </a></li>
+        
+        
+        <li><a href="#" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
+
+
+    <section class="main">
+      <div class="main-top">
+        <h1>Exam</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="card">
+        <img src="./pic/img2.jpg">
+        <h4>Dashboard</h4>
+        <button>View</button>
+      </div>
+      <div class="users">
+        <div class="card">
+          <img src="data:image/png;base64,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">
+          <h4>Add Question</h4>
+          
+          <a href="{{url_for('addquestion')}}"><button>View</button></a>
+        </div>
+        
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLPWqa8_MkyGoYNj4QXpZd-NNa_PdOfrWHbg&usqp=CAU">
+            <h4>All Questions</h4>
+            <a href="{{url_for('allquestions')}}">
+            <button>View</button>
+        </a>
+          </div>
+        
+        </div>
+      </div>
+
+     </section>
+     </div>
+     </body>
+     </html>

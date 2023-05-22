@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> Dashboard</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          <img src="./pic/logo.jpg">
+          <span class="nav-item">Admin</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-menorah"></i>
+          <span class="nav-item">Home</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-comment"></i>
+          <span class="nav-item">course</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-database"></i>
+          <span class="nav-item">Questions</span>
+        </a></li>
+        
+        <li><a href="#" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
+
+    
+    <section class="main">
+      <div class="main-top">
+        <h1>Exam</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="card">
+        <img src="./pic/img2.jpg">
+        <h4>Dashboard</h4>
+        <button>View</button>
+      </div>
+      <div class="users">
+        <div class="card">
+          <img src="https://banner2.cleanpng.com/20180420/vlq/kisspng-font-awesome-computer-icons-font-housing-logo-5ada418c752ba8.1327093815242530684799.jpg">
+          <h4>Home</h4>
+          <a href="{{url_for('stuhome')}}">
+
+          <button>View</button>
+          </a>
+        </div>
+        <div class="card">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA0lBMVEX///8iIiL/gwAAAAD/hQD/hwAYGBgAGCMfHx9paWno6OghIiIfISIAGiMbGxsAGSMaHyIuJyAREREQHSOwXxIMDAwICAjv7+9YOB3ZcgrExMSPUBe9vb329vaGhoa2trbZ2dmlpaVLS0sMHCN5eXne3t5YWFiBgYGOjo5gYGChoaHNzc3NbA6SkpIwMDBMTEw+Pj7neAhxQhuhWBU6KyDRbg01NTWGSxliOxxJMR/AZhGpWxTkdwlhOx04KiC1YRKKTRhMMh6ZVBZtQRwADyR8Rxpi1D4TAAAKUUlEQVR4nO2dfVfiOhCHhUAJb4UttihSaBFBQBB3FVdXd696/f5f6SZUoO+kTdJ078nvnD17jn9IHyfMTCaT6cmJlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSU1P9ItcVwPh3PRisFOFLXk+rU7ltd0U/GQJY9XauISdcURYWw4AhCVdEM9OPV5LpfE/2MqWX2rm8BMDR1xxUiqGoAwKp9Jfphk6tmTwDQ1Gg2N6ZigMK0J/qRk6i2XAODjG5PqQG9+rdADkdAj1mYMaYExiD/y7U20EAy6/ksOemLRoiVNQNaGvO5pALFNkVzRGkxAQodnmNIoCxFo4Sqt6ZYnj5GHcxF4wRUmzHj2zICZSgayasBk/XpZVxboqkO6is6Yz4sFYxz4nK6M0DpP6Ok5WOpDpkv0IMgmAk3o8nNgI40uBALuDA0nnwFbMZrkYBLvgZ0BG7FrdQq4M+HpOiWGL7umkeMCBMEQnyqpfPzoQEBAZlqL4uvoAtxnDXgMFtAhFjNGjBbPiRj9j8HRIgZWlEIYJYLVRBgdu5mIQoQIQ6yALzK2ot6EDOobphQICBC5F81HmWYyYQIAt4HOWNDKGChoK74AtrivMxOGteYcSUeEH0VbY6EYr3MToDf8c2Yd8mCTHDDC7CXhzWKZUz5AJq0x0rsBPgU4HKyRrEgl5AhMB0NyuBRYlzlZo1icUhtchDr3VImrAHNVM0HXjU6zUqz02DAV+CQgl9T1kbr7cvK78fnu5vH35Vmu05PyNrZdKnWaLvTav789VIql4ro393pz2ar06ZFZFwlnqaOFI12s/J0cVNEdDuVysWHiyfaBQshS8C0JkRLs/39z12pdMD7giyV7p4/G5VLigXL1IhpTIj9ytv7udt4Pspy6fzHWaWV1pQsv4mJTYj9yrfPZ0QXhXdYsOl9D0MjLhM50kanVXl1/AqJtr7no1npJKZkaETy6lod+ZX7f26il2akKZHvaSX1PcwS8D7ZIq23O5XKx2mIXyGCLJWR77lM5HsUVgWNW4JuJ+RXWk/vD6RLM8qU5fP3sya5KQGbRvGjxRnsVzqfz3dH/QoZZfH5s05oSoNNyeY6NlRg4529n9MZzw9Zfvn12iQII4zqGdGd6Nug8Pic1K+QURZv/vndarbjKZkUpSJ2vvWGk2yWOeB9QSLfc/pxGRtGNBY74UHIIkXJZuv+InFQSEG5DSPRvofJMvXv7fHSbKJkk4lfIYFEpvzzvRPhexgsU8uzSJFfab6x9StElDiFfQvzPTr9cdv8kLGxDAppKIvObsRDqI6oCUf7cN/44OlXyCDLL6cfXjtSB33zsEgbrz8yX54BxLsAIW29xl3Jx6s0Qxfjg8P/Ln77Vyl9vFh6YwX2NE8XD/zDhA8PBY079F89WN2h/iJOAlk33kI0M/xKfpUC/v1VKpa+hYRFQEkYkdCgbSCndM1Lty3nbPPw5mkUoUUFGLOvwFnbGU/fg37zw/vbriQXSUi5v4jf/OL0ps0lQmLj/fm4dPmVSEKN7jDxeIWGydbXh4f2Fbie6tlXRBJSupoqSffMtnwRWhZNQ1d6+fUzpMQYSUhZGV6T1qDqLHYbODGLqi1GEtJlNWbcPewAJC4j/iQvI4YY7zW6PhxDaFEQkpWCXX+FlLv+bVb9zbNB8je2xBDS3Ku1SAjhBgDF9Ty4nJ8gjOCIfggKjlQdqL59aTQhVbgg6i8B3e6wCoHuyn7qkUcyPjocFL63Pckm1AAYLS2/k4sm1GiaTom6gZ0jdWs5CpoyNoXdHbK5g4JqADjtb10HMaFC0zlsk3Qi7psGzP545TGlczR6ehdcsGEHpch4xuQwP4KckKaJf0lyquZpi7ia42kRHt/TrNw/+k9Ibx7vPUFhOzhi0HNf4SImVG8pCInODQONH73BBhju58Nh5OzHS3F7yl188R8aIuNpM9v/W4gJ4ZqCcEyS0oS1ttTsmdeUBedE8c4JCq7HUwDYLBch9++8hPUK3j21w07/YUEEIdbieh30PYGgUB1GpCQewkbrAu+Ab546IYSKKEIkFEYUr+85PNdXUIiUh7D5UHaiy2sIoiGQEMua3wL/tAwUFArjfnw+6SZsnpZ3bqoQ/CrS7PJZEJ5sw0hhP7DGFxRICBvtvR8u/7hkasN0vjRUV9uhQygorLxBgYSw/bY3Yemh5f98qu9h2KlMSkKs3rQaCAqRchOe7QmL55UAIY0vjT8cTUyYSOSENC0Zc5I2E9GEVDlNgsybuYgJqToyiPpMhBPS7C2IertFE1KdXNT+BkKqPb75N3gaqjrNSYGg1iackOoof0TQ8CWckOoUmCRty4Sw9KXyi5+QKqUhK9TwJ2zcv1/s9OnfBKt0Ny9IwgV/QrR33iuwy6c85iYpemdAGPvxlL3QBM5UNCFlVxTB54glhDrl5xC4GrGEVPVgLIKzGbGE9I1tytEvolhCylYMog8SSgg16g86vgkGlsl+ZJxpzogIGVxIINhAAUNdrWfT+ZDBFPnawl5WRxuoE86bZHEziCT5hhAqmo6Hy8+WvbSYlj1eAzzE3TWe/jghgxsXRNWoPaqiAbAhrIi66eYTBRjHvZpflEmpI6J9vhfz2JGEV91hVQN6kq6Pg9hcKSFZpgGpOigMCCC79q33gCqZ2FwLSjvaC5lyfWT4eK+adP6+V9QJjSMz/S1naICqFfl755B2QC+rK+tEJ1BRUsAotFJUGwOD9oo/s8vORH1D0VLBJvCnRnwM5ojozGZ+rinHrUMwsty/zxyw4GN2/fCE+BJpjFRQPTyNzYaP3RXSEyZzTbTdAKurEauhffTbioNYDDaB4BabccnsDQOMQsWXmAxQUkC/O2I3BIalCVlNp4GA4SsiWE+oydeEISy2JhQ4lTVKLB2po1T5N0exi4U7USY2rMVj2FeOxrVRHziFK0cj93iNos2Rs2HvZhxNxA7YPQiydzOOuiKnQLtF15sQJ/o9BhNpHAeXV/PgT6m6LY9qlYO4zzpd8yp58ZQ9IM9BySc5CBkG97cHXItFVOjnYBzVLKs3BIVJLWTx7ieBk/X5T9XfytyIQoScZkAHEQuCYkZWgChmKEIQ+SVrQXVFIGYJiKwIs/4uwmwBkRVX2SJm5mQOMtdZZuGqkBcEzrLLbrRNJnEwoOusdsSA+QB2UvWZvsc5SkLfRFrb8E9SVZ3/K57iVOW9UsGGU9WJWH2OLzzGKzQHL5KvTfiZ0VhZovG2Gmp8QqMq9mXHbpljDk4VghG/9zoll8Ws/WAnQ83Fe9VdGhZYMmp58DABzXXqNi5HUANj0SEiQnMWdoSGfp1TPqzhijI8qkCdi3uVOpEW1fQtJVAHE7EpGplMexQxsSUeTwOFpZhNUgrV5utkfemqDlaDzHfxdKrZM42IEio6ALdzS/QDp5JlV1f4AkVEHz7cwumz0DFRf4/MhT0dFcD2qoimYGmaphv4B4X1eN7LU2ZGo+5Vb2gvB2Os6XSwtIe9qxwHPSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKak0+g9eEQNt+OY48gAAAABJRU5ErkJggg==">
+          <h4>Courses</h4>
+         <a href="{{url_for('admincourse')}}">
+          <button class="one">View</button></a>
+        
+        </div>
+        <div class="card">
+            <img src="https://img.freepik.com/free-icon/conversation-questions_318-56224.jpg">
+            <h4>Questions</h4>
+            <a href="{{url_for('adminques')}}">
+            <button class="two">View</button></a>
+            
+          </div>
+        
+        </div>
+      </div>
+
+     </section>
+     </div>
+  
+     </body>
+     </html>

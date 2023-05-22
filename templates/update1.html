@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(1223)https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=ee1427f8cc&attid=0.29&permmsgid=msg-f:1764513085640061945&th=187ccf4d771ab3f9&view=att&disp=inline&realattid=f_lh1q7kte27&saddbat=ANGjdJ_MshkLnNguC8ZjE940MTbNZt_om8vtK0DJR-b0xzOIH1LaXC66h5zMVi2PQN47pDxlSm4_yT6TwKNHoWhhUixLDob8II8upY5qIk-ftIAtHhvkgVNz22Qy7ktc559n7eod70q8wgIIdbuDtu2D97m__9KOXN_2Puk2P03P9eSPB9tAsQZSgFVeW_7js3vBA4XTwkDLGHCYi2I0_zaANcRnNOKJ2TLejxjOqhNpc6YuT-sObd73dJGDfiR0nDcXjbUzIUTQKHSGUyABH21-QEsEvfpDtWMm5ACymHQy0TRf_Foh0IUwdJRySFu_LMLihwqDsZ9ra9cEPARZWR320LqeXBPHUv1xMyWNc_qnvHwoTAtoMf8IwiMFDhQr9GQiTZwnx1aKCcpZD0UrW4nG2AnSKrXHnRTQdPem_lCPjBzQaaP-shCwsKh3TRdmduszV3tX_-ZqYMS7TAeO8NMI4VeDCHw3a1SURipq09OLq4m6w-0FL5_yhapNRqZEpzmhz1f_SGI7GO4sLYWcd2ZReU2VbBR5b2iyUv3QLEiG4RB5PC5PHx2m4c_7JneagrwhI_yJLOtzdL9nxgJpELKp_d4Gb7nYrungme2ezp_6s3A_nhhCe2_kBGnNIAtHiHG6QCoduHG0A7IvB6VS0Qsd0n7Z4Qxuao2qPPPl5iJZbcFDZncmE_80JNp6dzypcrLduQJKCyRJtIUByRzPiulObnY_T5WzLQiE17Acwh6El3DfnfArQB3IKqmzfs98kbRLagWInWzVbzXzUJ8DGCq1L9R8qczRVLrWMtEXh_nkQTd5sySkL3d-uRlWY0y6s092iCosZTCEcRmeKKYNC1xuix2q04KXANFASwiDJxeJzS5KD6MD81lNcK-hn9bxJSTLpyj-P_SPyZgQM7eRmTFExoyeYt0jX788sRnhAE2b6QgULEa_7GlvOQqy8ZYYOA7TumRmpmZAXUVdlKewnkV0qxoD_TV7CLwMErRkpCggxU6hkuOjitmEVJXDdKo -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body{background-image:url('');background-color:#f2f2f2;font-family:Arial,sans-serif}.m_container{color:rgb(0,0,0);background-color:whitesmoke;border-radius:10px;margin:100px;padding:20px;width:400px;margin-left:500px}h1{color:#020202;font-size:24px;margin-bottom:20px;text-align:center}button{background-color:red;border-radius:5px;border:none;color:#fff;font-size:16px;margin-bottom:10px;padding:12px 20px;width:100%}button:hover{background-color:#45a049}</style></head><body><u></u>
+
+
+	
+	
+	
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div>
+	<div class="m_container">
+		<h1>Add Questions</h1>
+    
+		<form method="POST" target="_blank">
+            <label>Question id</label>
+			<input type="text" name="q_id" value="{{q_data[0]}}" readonly="" fdprocessedid="cf2ox">
+			<label>Question Name</label>
+			<input type="text" name="q_name" value="{{q_data[1]}}" fdprocessedid="u1lfcb">
+
+			<label>Course Id</label>
+            <select class="m_fname" name="one" fdprocessedid="220q8g">
+                {% for i in data %}
+                <option>{{i[0]}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label>Option-1</label>
+			<input type="text" name="option1" value="{{q_data[3]}}" fdprocessedid="3x2pyn">
+            <label>Option-2</label>
+			<input type="text" name="option2" value="{{q_data[4]}}" fdprocessedid="tloto8">
+			<label>Option-3</label>
+			<input type="text" name="option3" value="{{q_data[5]}}" fdprocessedid="u3brv">
+            <label>Option-4</label>
+			<input type="text" name="option4" value="{{q_data[6]}}" fdprocessedid="vwj7nj">
+            <label>Correct Option</label>
+			<input type="text" name="correct_option" value="{{q_data[7]}}" fdprocessedid="jbexri">
+            <label>Marks</label>
+			<input type="text" name="marks" value="{{q_data[8]}}" fdprocessedid="si4dai">
+			<button type="submit" fdprocessedid="uj1arj">Submit</button>
+        
+		</form>
+	</div>
+</div>
+</body></html>

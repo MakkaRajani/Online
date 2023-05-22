@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginpage</title>
+    <style>
+       h1{
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: violet; 
+       }
+       .container{
+        background-color: #efffef;
+        box-shadow: none;
+        margin-left: 30%;
+        padding: 40px;
+        width: 500px;
+        margin-right: 200px;
+       }
+       
+       body{
+            background-color:lightgreen;
+        }
+       button{
+        background-color:brown;
+        border-radius: 5px;
+        border: none;
+        color: white;       
+    }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST">
+    <h1>Enter email id</h1>
+    <input type="email" name="email" required/><br>
+    <button>submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update question
+    </title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        body {
+            background-color: wheat;
+            background-size: cover;
+        }
+        .btnstyle {
+            background-color:blue;
+            color:white;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button style="float:right" class="btnstyle">Back</button>
+    <form method="POST">
+        <div>
+            <h1>Update Question</h1>
+        </div>
+        <label>Questionid</label>
+        <p><input type="number" name="questionid" value="{{data[0]}}" required readonly/></p>
+        <label>QuestionName</label>
+        <p><input type="text" name="questionname" value="{{data[1]}}" required/></p>
+        <label>Course id</label>
+        <p><input type="number" name="courseid" value="{{data[2]}}" required/></p>
+        <label>Option1</label>
+        <p><input type="text" name="option1" value="{{data[3]}}" required/></p>
+        <label>Option2</label>
+        <p><input type="text" name="option2" value="{{data[4]}}" required/></p>
+        <label>Option3</label>
+        <p><input type="text" name="option3" value="{{data[5]}}" required/></p>
+        <label>Option4</label>
+        <p><input type="text" name="option4" value="{{data[6]}}" required/></p>
+        <label>correctoption</label>
+        <p><input type="text" name="correctoption" value="{{data[7]}}" required/></p>
+        <label>Marks</label>
+        <p><input type="number" name="marks" value="{{data[8]}}" required/></p>
+        <a href="{{url_for('allquestions')}}">
+        
+
+        <button class="btnstyle">Submit</button></a>
+    </form>
+</body>
+</html>
